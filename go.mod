@@ -1,4 +1,4 @@
-module github.com/benjamint-bsquare/quickbooks-go/v2
+module github.com/benjamint-bsquare/quickbooks-go
 
 go 1.24.0
 
