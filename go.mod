@@ -1,4 +1,4 @@
-module github.com/tommyhedley/quickbooks-go
+module github.com/benjamint-bsquare/quickbooks-go
 
 go 1.24.0
 
