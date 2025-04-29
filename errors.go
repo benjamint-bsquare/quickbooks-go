@@ -4,6 +4,7 @@
 package quickbooks
 
 import (
+	"compress/gzip"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -38,7 +39,19 @@ func (f Failure) Error() string {
 
 // parseFailure takes a response reader and tries to parse a Failure.
 func parseFailure(resp *http.Response) error {
-	msg, err := io.ReadAll(resp.Body)
+	var reader io.ReadCloser
+	switch resp.Header.Get("Content-Encoding") {
+	case "gzip":
+		var err error
+		reader, err = gzip.NewReader(resp.Body)
+		if err != nil {
+			return fmt.Errorf("failed to create gzip reader: %v", err)
+		}
+		defer reader.Close()
+	default:
+		reader = resp.Body
+	}
+	msg, err := io.ReadAll(reader)
 	if err != nil {
 		return errors.New("When reading response body:" + err.Error())
 	}
