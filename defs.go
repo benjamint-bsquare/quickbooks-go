@@ -144,22 +144,22 @@ const (
 )
 
 type Line struct {
-	Id                            string                        `json:",omitempty"`
-	LineNum                       int                           `json:",omitempty"`
-	Description                   string                        `json:",omitempty"`
-	Amount                        json.Number                   `json:",omitempty"`
-	DetailType                    LineDetailTypeEnum            `json:",omitempty"`
-	LinkedTxn                     []LinkedTxn                   `json:",omitempty"`
-	ProjectRef                    ReferenceType                 `json:",omitempty"`
-	AccountBasedExpenseLineDetail AccountBasedExpenseLineDetail `json:",omitempty"`
-	ItemBasedExpenseLineDetail    ItemBasedExpenseLineDetail    `json:",omitempty"`
-	SalesItemLineDetail           SalesItemLineDetail           `json:",omitempty"`
-	GroupLineDetail               GroupLineDetail               `json:",omitempty"`
-	DescriptionLineDetail         DescriptionLineDetail         `json:",omitempty"`
-	DiscountLineDetail            DiscountLineDetail            `json:",omitempty"`
-	SubTotalLineDetail            SubTotalLineDetail            `json:",omitempty"`
-	TaxLineDetail                 TaxLineDetail                 `json:",omitempty"`
-	ReimburseLineDetail           ReimburseLineDetail           `json:",omitempty"`
+	Id                            string                         `json:",omitempty"`
+	LineNum                       int                            `json:",omitempty"`
+	Description                   string                         `json:",omitempty"`
+	Amount                        json.Number                    `json:",omitempty"`
+	DetailType                    LineDetailTypeEnum             `json:",omitempty"`
+	LinkedTxn                     []LinkedTxn                    `json:",omitempty"`
+	ProjectRef                    *ReferenceType                 `json:",omitempty"`
+	AccountBasedExpenseLineDetail *AccountBasedExpenseLineDetail `json:",omitempty"`
+	ItemBasedExpenseLineDetail    *ItemBasedExpenseLineDetail    `json:",omitempty"`
+	SalesItemLineDetail           *SalesItemLineDetail           `json:",omitempty"`
+	GroupLineDetail               *GroupLineDetail               `json:",omitempty"`
+	DescriptionLineDetail         *DescriptionLineDetail         `json:",omitempty"`
+	DiscountLineDetail            *DiscountLineDetail            `json:",omitempty"`
+	SubTotalLineDetail            *SubTotalLineDetail            `json:",omitempty"`
+	TaxLineDetail                 *TaxLineDetail                 `json:",omitempty"`
+	ReimburseLineDetail           *ReimburseLineDetail           `json:",omitempty"`
 	DepositLineDetail
 }
 
@@ -257,12 +257,12 @@ type ReimburseLineDetail struct {
 
 // DepositLineDetail ...
 type DepositLineDetail struct {
-	AccountRef       ReferenceType
-	PaymentMethodRef ReferenceType `json:",omitempty"`
-	ClassRef         ReferenceType `json:",omitempty"`
-	TaxCodeRef       ReferenceType `json:",omitempty"`
-	EntityRef        ReferenceType `json:",omitempty"`
-	CheckNum         string        `json:",omitempty"`
+	AccountRef       *ReferenceType `json:",omitempty"`
+	PaymentMethodRef *ReferenceType `json:",omitempty"`
+	ClassRef         *ReferenceType `json:",omitempty"`
+	TaxCodeRef       *ReferenceType `json:",omitempty"`
+	EntityRef        *ReferenceType `json:",omitempty"`
+	CheckNum         string         `json:",omitempty"`
 	// TaxApplicableOn
 	// TxnType
 }
