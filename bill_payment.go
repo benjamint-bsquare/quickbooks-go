@@ -89,7 +89,7 @@ func (c *Client) FindBillPayments(params RequestParameters) ([]BillPayment, erro
 		}
 	}
 
-	if err := c.query(params, "SELECT COUNT(*) FROM BillPayments", &resp); err != nil {
+	if err := c.query(params, "SELECT COUNT(*) FROM BillPayment", &resp); err != nil {
 		return nil, err
 	}
 
