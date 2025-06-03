@@ -34,13 +34,13 @@ type BillPayment struct {
 	Line               []Line
 	LinkedTxn          []LinkedTxn `json:",omitempty"`
 	VendorRef          ReferenceType
-	CurrencyRef        ReferenceType         `json:",omitempty"`
-	APAccountRef       *ReferenceType        `json:",omitempty"`
-	DepartmentRef      *ReferenceType        `json:",omitempty"`
-	CheckPayment       BillPaymentCheck      `json:",omitempty"`
-	CreditCardPayment  BillPaymentCreditCard `json:",omitempty"`
-	TxnDate            Date                  `json:",omitempty"`
-	MetaData           ModificationMetaData  `json:",omitempty"`
+	CurrencyRef        ReferenceType          `json:",omitempty"`
+	APAccountRef       *ReferenceType         `json:",omitempty"`
+	DepartmentRef      *ReferenceType         `json:",omitempty"`
+	CheckPayment       *BillPaymentCheck      `json:",omitempty"`
+	CreditCardPayment  *BillPaymentCreditCard `json:",omitempty"`
+	TxnDate            Date                   `json:",omitempty"`
+	MetaData           ModificationMetaData   `json:",omitempty"`
 	TotalAmt           json.Number
 	ExchangeRate       json.Number `json:",omitempty"`
 	PayType            BillPaymentTypeEnum
