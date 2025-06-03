@@ -30,8 +30,8 @@ type Bill struct {
 	PrivateNote             string               `json:",omitempty"`
 	Domain                  string               `json:"domain,omitempty"`
 	Status                  string               `json:"status,omitempty"`
+	GlobalTaxCalculation    string               `json:",omitempty"`
 	// IncludeInAnnualTPAR  bool          `json:",omitempty"`
-	// GlobalTaxCalculation
 	// TransactionLocationType
 }
 

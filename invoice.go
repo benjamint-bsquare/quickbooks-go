@@ -57,8 +57,8 @@ type Invoice struct {
 	FreeFormAddress              bool                 `json:",omitempty"`
 	Domain                       string               `json:"domain,omitempty"`
 	Status                       string               `json:"status,omitempty"`
+	GlobalTaxCalculation         string               `json:",omitempty"`
 	// InvoiceLink                  string               `json:",omitempty"`
-	// GlobalTaxCalculation
 	// TransactionLocationType
 }
 
